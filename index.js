@@ -1,6 +1,5 @@
-"use strict";
-
-// just pass through Franz
-module.exports = function (Franz) {
-  return Franz;
+module.exports = Franz => class Messenger extends Franz {
+  overrideUserAgent() {
+    return window.navigator.userAgent.replace(/(Franz|Electron)([^\s]+\s)/g, '');
+  }
 };
