@@ -10,4 +10,14 @@ module.exports = (Franz) => {
   };
 
   Franz.loop(getMessages);
+  
+  if (typeof Franz.onNotify === 'function') {
+    Franz.onNotify(notification => {
+      if (typeof notification.title !== 'string') {
+        notification.title = ((notification.title.props || {}).content || [])[0] || 'Messenger';
+      }
+
+      return notification;
+    });
+  }
 };
