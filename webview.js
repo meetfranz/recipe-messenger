@@ -12,13 +12,13 @@ module.exports = (Franz) => {
   Franz.loop(getMessages);
 
   if (typeof Franz.onNotify === 'function') {
-    Franz.onNotify(notification => {
+    Franz.onNotify((notification) => {
       if (typeof notification.title !== 'string') {
         notification.title = ((notification.title.props || {}).content || [])[0] || 'Messenger';
       }
 
       if (typeof notification.options.body !== 'string') {
-        notification.options.body = (((notification.options.body || {}).props || {}).content || [])[0] || "";
+        notification.options.body = (((notification.options.body || {}).props || {}).content || [])[0] || '';
       }
 
       return notification;
