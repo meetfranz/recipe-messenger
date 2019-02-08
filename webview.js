@@ -12,7 +12,7 @@ module.exports = (Franz) => {
   Franz.loop(getMessages);
 
   /* Enable desktop notifications in messenger settings */
-  localStorage.set('_cs_desktopNotifsEnabled', JSON.stringify({ __t: new Date().getTime(), __v: true }));
+  localStorage.setItem('_cs_desktopNotifsEnabled', JSON.stringify({ __t: new Date().getTime(), __v: true }));
 
   if (typeof Franz.onNotify === 'function') {
     Franz.onNotify((notification) => {
