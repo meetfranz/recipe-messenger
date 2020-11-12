@@ -1,3 +1,5 @@
+import path from 'path';
+
 module.exports = (Franz) => {
   const getMessages = function getMessages() {
     const messengerIframe = document.querySelector('iframe[src^="https://www.facebook.com/messages"]');
@@ -32,4 +34,6 @@ module.exports = (Franz) => {
       return notification;
     });
   }
+
+  Franz.injectCSS(path.join(__dirname, 'service.css'));
 };
