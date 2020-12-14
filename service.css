@@ -1,3 +1,15 @@
 #pagelet_bluebar {
   display: none !important;
 }
+
+:root {
+  --header-height: 0px !important;
+}
+
+[role="banner"] {
+  display: none;
+}
+
+/* .gitj76qy {
+  max-height: 100vh !important;
+} */
