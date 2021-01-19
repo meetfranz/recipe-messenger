@@ -2,16 +2,10 @@ import path from 'path';
 
 module.exports = (Franz) => {
   const getMessages = function getMessages() {
-    const messengerIframe = document.querySelector('iframe[src^="https://www.facebook.com/messages"]');
-    if (messengerIframe) {
-      window.location.href = messengerIframe.src;
-    }
-
-    let count = document.querySelectorAll('._5fx8:not(._569x),._1ht3:not(._569x)').length;
-    const messageRequestsElement = document.querySelector('._5nxf');
-    if (messageRequestsElement) {
-      count += parseInt(messageRequestsElement.innerHTML, 10);
-    }
+    let count = 0;
+    document.querySelectorAll('[data-testid="mwthreadlist-item"]').forEach((node) => {
+      if (node.querySelector('.lrazzd5p')) count += 1;
+    });
 
     Franz.setBadge(count);
   };
