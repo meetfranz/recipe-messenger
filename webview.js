@@ -4,7 +4,7 @@ module.exports = (Franz) => {
   const getMessages = function getMessages() {
     let count = 0;
     document.querySelectorAll('[data-testid="mwthreadlist-item"]').forEach((node) => {
-      if (node.querySelector('.lrazzd5p, .is6700om')) count += 1;
+      if (node.querySelector('.lrazzd5p, .is6700om, .o48pnaf2')) count += 1;
     });
 
     Franz.setBadge(count);
