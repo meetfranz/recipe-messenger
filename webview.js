@@ -7,7 +7,7 @@ module.exports = (Franz) => {
       if (node.querySelector('.lrazzd5p, .is6700om, .o48pnaf2')) count += 1;
     });
 
-    count += document.querySelectorAll('[role="gridcell"] .xwnonoy').length;
+    count += document.querySelectorAll('[role="gridcell"] .xwnonoy, [role="gridcell"] .x107p15e').length;
 
     Franz.setBadge(count);
   };
