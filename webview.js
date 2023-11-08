@@ -14,6 +14,16 @@ module.exports = (Franz) => {
 
   Franz.loop(getMessages);
 
+  /* Fixes links to be opened directly without prompt that user is leaving Facebook */
+  const fixLinks = function fixLinks() {
+    const links = document.querySelectorAll('a[data-lynx-uri]');
+    links.forEach(link => {
+      link.setAttribute('data-lynx-uri', link.href);
+    });
+  };
+
+  Franz.loop(fixLinks);
+
   /* Enable desktop notifications in messenger settings */
   localStorage.setItem('_cs_desktopNotifsEnabled', JSON.stringify({ __t: new Date().getTime(), __v: true }));
 
